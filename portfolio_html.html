@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vemula Sai Charan | RTL Design Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + IBM Plex Mono (mono) + DM Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR — Fixed top, collapses on scroll
+  ═══════════════════════════════════════════════════════ -->
+  <nav id="mainNav">
+    <div class="nav-container">
+      <!-- Brand: initials in monospace -->
+      <a class="nav-brand" href="#">VSC<span class="accent">.</span></a>
+
+      <!-- Hamburger for mobile -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Navigation links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certs"    class="nav-link">Certs</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact"  class="nav-link contact-btn">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO — Full viewport, circuit-trace background
+  ═══════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <!-- Animated circuit SVG background -->
+    <canvas id="circuitCanvas"></canvas>
+
+    <!-- Radial glow -->
+    <div class="hero-glow"></div>
+
+    <div class="hero-inner">
+      <!-- Left: text content -->
+      <div class="hero-text">
+        <div class="hero-badge reveal">
+          <span class="badge-dot"></span>
+          <span class="mono">RTL Design · Verilog · FPGA</span>
+        </div>
+
+        <h1 class="hero-name reveal delay-1">
+          Vemula<br/>
+          <span class="name-accent">Sai Charan</span>
+        </h1>
+
+        <p class="hero-subtitle mono reveal delay-2">
+          // VLSI &amp; Digital Design Engineer
+        </p>
+
+        <p class="hero-bio reveal delay-3">
+          Electronics &amp; Communication Engineering student at
+          <strong>Vasavi College of Engineering, Hyderabad</strong>.
+          Passionate about RTL design, FSM architectures, pipelined datapaths,
+          and building reliable silicon — from spec to waveform.
+        </p>
+
+        <div class="hero-cta reveal delay-3">
+          <a href="#projects" class="btn-primary">
+            View Projects <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="hero-stats reveal delay-3">
+          <div class="stat-item">
+            <span class="stat-num">8.45</span>
+            <span class="stat-lbl">B.E. CGPA</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">9.47</span>
+            <span class="stat-lbl">Diploma CGPA</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">2+</span>
+            <span class="stat-lbl">Projects</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">10.0</span>
+            <span class="stat-lbl">SSC CGPA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: profile image -->
+      <div class="hero-photo reveal delay-2">
+        <div class="photo-frame">
+          <!-- Rotating dashed ring -->
+          <div class="photo-ring"></div>
+          <!-- Corner brackets for the engineering aesthetic -->
+          <div class="bracket tl"></div>
+          <div class="bracket tr"></div>
+          <div class="bracket bl"></div>
+          <div class="bracket br"></div>
+          <!-- Actual image — place profile.jpg inside /images/ -->
+          <img
+            src="images/profile.jpg"
+            alt="Vemula Sai Charan"
+            class="profile-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback initials when image is absent -->
+          <div class="profile-initials" style="display:none;">
+            <span class="mono">VSC</span>
+          </div>
+        </div>
+        <!-- VLSI label badge -->
+        <div class="photo-badge mono">
+          <i class="bi bi-cpu-fill"></i> VLSI Engineer
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint">
+      <span class="mono">scroll</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ABOUT — Who Am I?
+  ═══════════════════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label mono reveal">// 01. about_me</div>
+      <h2 class="section-title reveal">Who Am I?</h2>
+
+      <div class="about-grid">
+        <!-- Text block -->
+        <div class="about-text reveal delay-1">
+          <p>
+            I'm a B.E. Electronics &amp; Communication Engineering student at
+            <strong>Vasavi College of Engineering, Hyderabad</strong> (CGPA: 8.45),
+            with a strong foundation built through a Diploma at
+            <strong>Jawaharlal Nehru Government Polytechnic</strong> (CGPA: 9.47).
+          </p>
+          <p>
+            My core interest lies in <strong>RTL design and digital verification</strong> —
+            designing FSM-based architectures, pipelined modules, and communication
+            protocols like UART and APB, then validating them with
+            self-checking testbenches and waveform analysis using tools like
+            Xilinx Vivado and Synopsys VCS.
+          </p>
+          <p>
+            I'm currently deepening my <strong>SystemVerilog</strong> skills and
+            targeting roles in RTL design, digital design, verification, or FPGA
+            development where strong hardware fundamentals matter.
+          </p>
+
+          <!-- Social links -->
+          <div class="about-links">
+            <a href="https://linkedin.com/in/vsaicharangoud" target="_blank" class="link-chip">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/vsaicharangoud" target="_blank" class="link-chip">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+            <a href="mailto:vsaicharangoud7@gmail.com" class="link-chip">
+              <i class="bi bi-envelope-fill"></i> Email
+            </a>
+            <a href="tel:+917989177279" class="link-chip">
+              <i class="bi bi-telephone-fill"></i> +91 79891 77279
+            </a>
+          </div>
+        </div>
+
+        <!-- Info panel: key facts -->
+        <div class="about-panel reveal delay-2">
+          <div class="panel-title mono">// quick_facts</div>
+          <ul class="facts-list">
+            <li>
+              <span class="fact-key mono">call_sign</span>
+              <span class="fact-val accent">VU3JQC</span>
+            </li>
+            <li>
+              <span class="fact-key mono">license</span>
+              <span class="fact-val">Amateur Radio Operator</span>
+            </li>
+            <li>
+              <span class="fact-key mono">primary_hdl</span>
+              <span class="fact-val accent">Verilog / SystemVerilog</span>
+            </li>
+            <li>
+              <span class="fact-key mono">eda_tool</span>
+              <span class="fact-val">Xilinx Vivado, VCS</span>
+            </li>
+            <li>
+              <span class="fact-key mono">target_domain</span>
+              <span class="fact-val accent">RTL · Verification · FPGA</span>
+            </li>
+            <li>
+              <span class="fact-key mono">location</span>
+              <span class="fact-val">Hyderabad, India</span>
+            </li>
+            <li>
+              <span class="fact-key mono">status</span>
+              <span class="fact-val open">Open to Opportunities</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SKILLS — Technical skills in grouped cards
+  ═══════════════════════════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-label mono reveal">// 02. tech_skills</div>
+      <h2 class="section-title reveal">Technical Skills</h2>
+      <p class="section-sub reveal delay-1">
+        Core competencies across hardware description, digital design, and EDA toolchains.
+      </p>
+
+      <!-- Skill groups -->
+      <div class="skill-groups">
+
+        <!-- Group 1: HDLs -->
+        <div class="skill-group reveal">
+          <div class="group-head">
+            <i class="bi bi-code-slash accent"></i>
+            <span class="mono group-name">Hardware Description Languages</span>
+          </div>
+          <div class="skill-chips">
+            <div class="skill-chip primary">
+              <span class="chip-dot"></span>Verilog HDL
+            </div>
+            <div class="skill-chip secondary">
+              <span class="chip-dot"></span>SystemVerilog (learning)
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: Digital Design -->
+        <div class="skill-group reveal delay-1">
+          <div class="group-head">
+            <i class="bi bi-cpu accent"></i>
+            <span class="mono group-name">Digital Design</span>
+          </div>
+          <div class="skill-chips">
+            <div class="skill-chip primary"><span class="chip-dot"></span>RTL Design</div>
+            <div class="skill-chip primary"><span class="chip-dot"></span>FSM Design</div>
+            <div class="skill-chip primary"><span class="chip-dot"></span>Pipelining</div>
+            <div class="skill-chip primary"><span class="chip-dot"></span>Datapath Architecture</div>
+            <div class="skill-chip secondary"><span class="chip-dot"></span>FIFO Design</div>
+            <div class="skill-chip secondary"><span class="chip-dot"></span>Clock Domain Crossing (CDC)</div>
+          </div>
+        </div>
+
+        <!-- Group 3: Protocols -->
+        <div class="skill-group reveal delay-2">
+          <div class="group-head">
+            <i class="bi bi-diagram-3 accent"></i>
+            <span class="mono group-name">Communication Protocols</span>
+          </div>
+          <div class="skill-chips">
+            <div class="skill-chip primary"><span class="chip-dot"></span>UART</div>
+            <div class="skill-chip primary"><span class="chip-dot"></span>APB</div>
+          </div>
+        </div>
+
+        <!-- Group 4: EDA Tools -->
+        <div class="skill-group reveal">
+          <div class="group-head">
+            <i class="bi bi-tools accent"></i>
+            <span class="mono group-name">EDA Tools &amp; Platforms</span>
+          </div>
+          <div class="skill-chips">
+            <div class="skill-chip primary"><span class="chip-dot"></span>Xilinx Vivado</div>
+            <div class="skill-chip primary"><span class="chip-dot"></span>Synopsys VCS</div>
+            <div class="skill-chip secondary"><span class="chip-dot"></span>FPGA Prototyping</div>
+            <div class="skill-chip secondary"><span class="chip-dot"></span>Waveform Analysis</div>
+          </div>
+        </div>
+
+        <!-- Group 5: Programming -->
+        <div class="skill-group reveal delay-1">
+          <div class="group-head">
+            <i class="bi bi-filetype-c accent"></i>
+            <span class="mono group-name">Programming</span>
+          </div>
+          <div class="skill-chips">
+            <div class="skill-chip primary"><span class="chip-dot"></span>C</div>
+          </div>
+        </div>
+
+        <!-- Group 6: Verification -->
+        <div class="skill-group reveal delay-2">
+          <div class="group-head">
+            <i class="bi bi-check2-square accent"></i>
+            <span class="mono group-name">Verification</span>
+          </div>
+          <div class="skill-chips">
+            <div class="skill-chip primary"><span class="chip-dot"></span>Self-Checking Testbenches</div>
+            <div class="skill-chip secondary"><span class="chip-dot"></span>Functional Simulation</div>
+            <div class="skill-chip secondary"><span class="chip-dot"></span>Waveform Debug</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legend -->
+      <div class="skill-legend reveal">
+        <span class="legend-item"><span class="chip-dot primary-dot"></span> Primary</span>
+        <span class="legend-item"><span class="chip-dot secondary-dot"></span> Learning / Exposure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROJECTS — Featured hardware/RTL projects
+  ═══════════════════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label mono reveal">// 03. projects</div>
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <p class="section-sub reveal delay-1">
+        Hardware design and embedded systems — designed, simulated, and verified.
+      </p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: 4-Stage Pipelined ALU (FEATURED) -->
+        <div class="project-card featured reveal">
+          <div class="card-header">
+            <span class="proj-num mono">01</span>
+            <div class="proj-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+          </div>
+          <div class="proj-year mono">2025</div>
+          <h3 class="proj-title">4-Stage Pipelined ALU</h3>
+          <p class="proj-subtitle mono">with Data Hazard Handling</p>
+          <p class="proj-desc">
+            Designed a 4-stage pipelined ALU (IF → ID → EX → WB) in Verilog HDL supporting
+            arithmetic and logic operations. Achieved one-result-per-cycle throughput using
+            stage registers and modular RTL architecture. Implemented RAW hazard detection
+            with forwarding logic; validated correct pipeline behavior on dependent instruction
+            sequences through Xilinx Vivado waveform simulation.
+          </p>
+          <!-- Architecture highlight -->
+          <div class="arch-highlight">
+            <div class="arch-stage mono">IF</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-stage mono">ID</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-stage mono">EX</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-stage mono">WB</div>
+          </div>
+          <div class="proj-tags">
+            <span>Verilog HDL</span>
+            <span>Pipelining</span>
+            <span>Hazard Detection</span>
+            <span>Forwarding Logic</span>
+            <span>Xilinx Vivado</span>
+            <span>RTL Design</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Ornithopter -->
+        <div class="project-card reveal delay-1">
+          <div class="card-header">
+            <span class="proj-num mono">02</span>
+            <div class="proj-icon"><i class="bi bi-broadcast-pin"></i></div>
+          </div>
+          <div class="proj-year mono">2025</div>
+          <h3 class="proj-title">Ornithopter with Custom Controller</h3>
+          <p class="proj-subtitle mono">Wireless Embedded Control System</p>
+          <p class="proj-desc">
+            Built an ornithopter control system using Arduino Nano and nRF24L01 radio modules,
+            enabling wireless transmission and reception for coordinated wing-flapping control.
+            Implemented the control circuitry on a prototyping board with soldered wiring and
+            developed a gear-driven actuation mechanism to achieve controlled wing motion and
+            partial aerodynamic lift.
+          </p>
+          <div class="proj-tags">
+            <span>Arduino</span>
+            <span>nRF24L01</span>
+            <span>Embedded C</span>
+            <span>Wireless Control</span>
+            <span>PCB Prototyping</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CERTIFICATIONS — NPTEL + Amateur Radio
+  ═══════════════════════════════════════════════════════ -->
+  <section id="certs" class="section section-alt">
+    <div class="container">
+      <div class="section-label mono reveal">// 04. certifications</div>
+      <h2 class="section-title reveal">Certifications</h2>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-logo">
+            <i class="bi bi-patch-check-fill accent"></i>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer mono">NPTEL</div>
+            <h3 class="cert-name">VLSI Design Flow: RTL to GDS</h3>
+            <div class="cert-score">
+              <span class="score-bar">
+                <span class="score-fill" style="width:82%"></span>
+              </span>
+              <span class="score-num accent mono">82%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-logo">
+            <i class="bi bi-patch-check-fill accent"></i>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer mono">NPTEL</div>
+            <h3 class="cert-name">Digital System Design</h3>
+            <div class="cert-score">
+              <span class="score-bar">
+                <span class="score-fill" style="width:76%"></span>
+              </span>
+              <span class="score-num accent mono">76%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-logo">
+            <i class="bi bi-wifi accent"></i>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer mono">Government of India</div>
+            <h3 class="cert-name">Amateur Radio Station Operator</h3>
+            <div class="cert-callsign mono accent">Call Sign: VU3JQC</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       EDUCATION — Academic timeline
+  ═══════════════════════════════════════════════════════ -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-label mono reveal">// 05. education</div>
+      <h2 class="section-title reveal">Education</h2>
+
+      <div class="edu-grid">
+
+        <!-- B.E. -->
+        <div class="edu-card reveal">
+          <div class="edu-top">
+            <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="edu-year mono">Aug 2024 – Present</div>
+          </div>
+          <h3 class="edu-degree">B.E. Electronics &amp; Communication Engineering</h3>
+          <p class="edu-inst">Vasavi College of Engineering, Hyderabad</p>
+          <div class="edu-footer">
+            <span class="cgpa-label mono">CGPA</span>
+            <span class="cgpa-val accent mono">8.45</span>
+          </div>
+        </div>
+
+        <!-- Diploma -->
+        <div class="edu-card reveal delay-1">
+          <div class="edu-top">
+            <div class="edu-icon"><i class="bi bi-building"></i></div>
+            <div class="edu-year mono">2021 – 2024</div>
+          </div>
+          <h3 class="edu-degree">Diploma in Electronics &amp; Communication Engineering</h3>
+          <p class="edu-inst">Jawaharlal Nehru Government Polytechnic</p>
+          <div class="edu-footer">
+            <span class="cgpa-label mono">CGPA</span>
+            <span class="cgpa-val accent mono">9.47</span>
+          </div>
+        </div>
+
+        <!-- SSC -->
+        <div class="edu-card reveal delay-2">
+          <div class="edu-top">
+            <div class="edu-icon"><i class="bi bi-book-fill"></i></div>
+            <div class="edu-year mono">2021</div>
+          </div>
+          <h3 class="edu-degree">Class X — SSC</h3>
+          <p class="edu-inst">Presidency High School</p>
+          <div class="edu-footer">
+            <span class="cgpa-label mono">CGPA</span>
+            <span class="cgpa-val accent mono">10.0</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT — Get in touch
+  ═══════════════════════════════════════════════════════ -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-label mono reveal">// 06. contact</div>
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <p class="section-sub reveal delay-1">
+        Open to VLSI internships, RTL design roles, FPGA opportunities, and project collaborations.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Contact form -->
+        <div class="contact-form-wrap reveal delay-1">
+          <form id="contactForm" novalidate>
+            <div class="field-group">
+              <input type="text" id="fName" class="field-input" placeholder="Your Name" required />
+              <div class="field-err" id="errName"></div>
+            </div>
+            <div class="field-group">
+              <input type="email" id="fEmail" class="field-input" placeholder="Your Email" required />
+              <div class="field-err" id="errEmail"></div>
+            </div>
+            <div class="field-group">
+              <textarea id="fMsg" class="field-input" rows="5" placeholder="Your Message" required></textarea>
+              <div class="field-err" id="errMsg"></div>
+            </div>
+            <button type="submit" class="btn-primary w-full" id="sendBtn">
+              Send Message <i class="bi bi-send-fill"></i>
+            </button>
+            <div id="formSuccess" class="form-success"></div>
+          </form>
+        </div>
+
+        <!-- Direct contact info -->
+        <div class="contact-info reveal delay-2">
+          <a href="tel:+917989177279" class="contact-item">
+            <div class="ci-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div>
+              <div class="ci-label mono">phone</div>
+              <div class="ci-val">+91 79891 77279</div>
+            </div>
+          </a>
+          <a href="mailto:vsaicharangoud7@gmail.com" class="contact-item">
+            <div class="ci-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <div class="ci-label mono">email</div>
+              <div class="ci-val">vsaicharangoud7@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/vsaicharangoud" target="_blank" class="contact-item">
+            <div class="ci-icon"><i class="bi bi-linkedin"></i></div>
+            <div>
+              <div class="ci-label mono">linkedin</div>
+              <div class="ci-val">vsaicharangoud</div>
+            </div>
+          </a>
+          <a href="https://github.com/vsaicharangoud" target="_blank" class="contact-item">
+            <div class="ci-icon"><i class="bi bi-github"></i></div>
+            <div>
+              <div class="ci-label mono">github</div>
+              <div class="ci-val">vsaicharangoud</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container footer-inner">
+      <p class="mono footer-id">Vemula Sai Charan &nbsp;·&nbsp; ECE @ Vasavi College &nbsp;·&nbsp; Hyderabad</p>
+      <p class="footer-copy">Designed &amp; Built with HTML · CSS · JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
